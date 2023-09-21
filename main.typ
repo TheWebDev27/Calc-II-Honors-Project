@@ -47,7 +47,7 @@ takes a set of inputs (x) and produces a corresponding set of their squares (f(x
 #table(
     columns: (auto, auto),
     inset: 10pt,
-    align: horizon,
+    align: center,
     [x], [y],
     $-3$, $9$,
     $-2$, $4$,
@@ -61,3 +61,12 @@ takes a set of inputs (x) and produces a corresponding set of their squares (f(x
 #set align(left)
 
 Plotting these points on the XY coordinate plane produces the following graph:
+
+#set align(center)
+
+#figure(
+    image("images/parabola.png", width: 75%),
+    caption: [
+        f(x)
+    ]
+)
