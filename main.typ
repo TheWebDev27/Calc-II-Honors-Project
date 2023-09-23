@@ -66,7 +66,8 @@ Plotting these points on the XY coordinate plane produces the following graph:
 #set align(center)
 
 #figure(
-    image("images/parabola.png", width: 55%)
+    image("images/parabola.png", width: 55%),
+    caption: [f(x) produces a parabolic curve]
 )
 
 #set align(left)
@@ -160,9 +161,12 @@ This definition states that $f(x)$ approaches $L$ as x approaches a certain valu
 
 #figure(
     image("images/epsilon-delta limit visualization.png", width: 65%),
+    caption: [Epsilon-delta definition of the limit visualized]
 )
 
-The image above is a visualization of the epsilon-delta definition. One minor detail to note is how it shows $delta_1$ and $delta_2$ instead of simply $delta$. This is because the $x$ corresponding to $L - epsilon$ does not necessarily lie the same distance away from $c$ as the $x$ corresponding to $L + epsilon$, since the rate at which $f(x)$ changes may vary as $x$ sweeps from $c - delta_1$ to $c + delta_2$. This complication can be readily resolved by letting $delta$ equal the smaller of $delta_1$ and $delta_2$:
+One minor detail to note is how it shows $delta_1$ and $delta_2$ instead of simply $delta$. This is because the $x$ corresponding to $L - epsilon$ does not necessarily lie the same distance away from $c$ as the $x$ corresponding to $L + epsilon$, since the rate at which $f(x)$ changes may vary as $x$ sweeps from $c - delta_1$ to $c + delta_2$. To illustrate this, notice how the curvature in the graph of Figure 2 is steeper on the left-hand side of $c$ compared to the curvature on the right-hand side. This means that sweeping through some range of outputs on the left requires a smaller increment of $x$ as opposed to sweeping through that same range of outputs on the right. Therefore, $delta_1 < delta_2$ for this particular graph.
+
+This complication can be readily resolved by letting $delta$ equal the smaller of $delta_1$ and $delta_2$:
 
 #set align(center)
 
@@ -170,7 +174,7 @@ $delta = min(delta_1 , delta_2)$
 
 #set align(left)
 
-$min()$ is shorthand for taking the minimum value of the set of numbers present in the parentheses. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 > delta_2$. If |x
+$min()$ is shorthand for taking the minimum value of the set of numbers present between the parentheses. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 > delta_2$. If $|x - c| < delta_1$, then |f(x) - L| < 
 
 #text(14pt)[
   Employing the Definition
@@ -216,7 +220,7 @@ We can also prove some essential limit laws: their sums, differences, products, 
             columns: (20pt, auto),
             align: (right, left),
             stroke: none,
-            [(i)], $lim_(x -> a)[f(x + g(x))] = L + M$,
+            [(i)], $lim_(x -> a)[f(x) + g(x))] = L + M$,
             [(ii)], $lim_(x -> a)[f(x - g(x))] = L - M$,
             [(iii)], $lim_(x -> a)f(x)g(x) = L M$,
             [(iv)], $lim_(x -> a)f(x)/g(x) = L/M$
