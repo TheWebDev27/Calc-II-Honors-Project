@@ -176,7 +176,7 @@ $delta = min(delta_1 , delta_2)$
 
 #set align(left)
 
-$min()$ is shorthand for taking the minimum value of the set of numbers present between the parentheses. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 < delta_2$ and that $|x - c| < delta_1$ implies $|f(x) - L| < epsilon$. If $|x - c| < delta_1$, then $|x - c| < delta_2$ since $delta_1 < delta_2$. It is therefore assured that $|f(x) - L| < epsilon$.
+$min()$ is shorthand for taking the smallest value among the set of numbers present between the parentheses. For instance, if $x = min(1, 2, 3)$, then $x = 1$. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 < delta_2$ and that $|x - c| < delta_1$ implies $|f(x) - L| < epsilon$. If $|x - c| < delta_1$, then $|x - c| < delta_2$ since $delta_1 < delta_2$. It is therefore assured that $|f(x) - L| < epsilon$.
 
 #v(20pt)
 
@@ -258,13 +258,13 @@ Continuing the proof, we let $delta = min(delta_1, delta_2)$. If $0 < |x - a| < 
 
 #set align(center)
 
-$|[f(x) + g(x)] - (L + M)| &= |[f(x) - L] + [g(x) - M]| \
-    &<= |f(x) - L| + |g(x) - M| \
-    &< 1/2 epsilon + 1/2 epsilon = epsilon,$
+$|[f(x) + g(x)] - (L + M)| &= |[f(x) - L] + [g(x) - M]| #h(40pt) &(1)\
+    &<= |f(x) - L| + |g(x) - M| &(2)\
+    &< 1/2 epsilon + 1/2 epsilon = epsilon, &(3)$
 
 #set align(left)
 
-proving (i). Analyzing the three-step sequence above in further detail: the first equality simply takes advantage of the associative property of addition and moves terms around. The inequality proceeding it is a subtle application of the distances variation of the *triangle inequality* which states that, for real numbers $x$ and $y$,
+proving (i). Analyzing the three-step sequence above in further detail: (1) simply takes advantage of the associative property of addition and moves terms around. (2) is a subtle application of the distances variation of the *triangle inequality* which states that, for real numbers $x$ and $y$,
 
 #set align(center)
 
@@ -274,7 +274,7 @@ $|x + y| <= |x| + |y|$.
 
 It essentially says that the distance between the sum of two numbers and 0 can be no more than the combined distances of $x$ to 0 and $y$ to 0. For example, let $x = 2$ and $y = 3$. Therefore, $|x + y| = 5 = |x| + |y|$. In general, $|x + y| = |x| + |y|$ when either a) both numbers are of the same sign or b) at least one of the numbers is 0. Let $x = -2$ and $y = 3$. We then have $|x + y| = 1 < |x| + |y| = 5$. In general, $|x + y| < |x| + |y|$ if $x,y != 0$ and are of opposite sign. It can ultimately be seen that $|x + y|$ is in fact less than or equal to $|x| + |y|$. As for the limit proof, the two values involved in the triangle inequality are $f(x) - L$ and $g(x) - M$. 
 
-The final inequality simply substitutes both $|f(x) - L|$ and $|g(x) - M|$ for $1/2 epsilon$. Since $|f(x) - L| < 1/2 epsilon$ and $|g(x) - M| < 1/2 epsilon$, it follows that $|f(x) - L| + |g(x) - M| < 1/2 epsilon + 1/2 epsilon$. The theorem is ultimately proven, because the difference between the function, $f(x) + g(x)$, and the desired limit, $L + M$, was shown to be less than any $epsilon > 0$ given an appropriate $delta$.
+(3) substitutes both $|f(x) - L|$ and $|g(x) - M|$ for $1/2 epsilon$. Since $|f(x) - L| < 1/2 epsilon$ and $|g(x) - M| < 1/2 epsilon$, it follows that $|f(x) - L| + |g(x) - M| < 1/2 epsilon + 1/2 epsilon$. The theorem is ultimately proven, because the difference between the function, $f(x) + g(x)$, and the desired limit, $L + M$, was shown to be less than any $epsilon > 0$ given an appropriate $delta$.
 
 The proof of (ii) is similar to that of (i). We once again allow $delta_1, delta_2 > 0$ where
 
@@ -303,3 +303,130 @@ $|[f(x) - g(x)| - (L - M)] &= |[f(x) - L] + [M - g(x)]| \
 #set align(left)
 
 proving (ii).
+
+To prove (iii), we add and subtract $f(x)M$ to help relate the quantity $f(x)g(x) - L M$ to the differences $f(x) - L$ and $g(x) - M$:
+
+#set align(center)
+
+$|f(x)g(x) - L M| &= |[f(x)g(x)-f(x)M] + [f(x)M - L M]| \
+    &<= |f(x)g(x) - f(x)M| + |f(x)M - L M| \
+    &= |f(x)||g(x) - M| + |M||f(x) - L| \
+    &<= |f(x)||g(x) - M| + (|M| + 1)|f(x) - L|. #h(16pt) (4)$
+
+#set align(left)
+
+Provided some $epsilon > 0$, it is certain that $delta_1, delta_2, delta_3 > 0$ all exist where
+
+#set align(center)
+
+$0 < |x - a| < delta_1 &=> |f(x) - L| < 1 => |f(x)| < |L| + 1; #h(40pt) &(5)\
+    0 < |x - a| < delta_2 &=> |g(x) - M| < 1/2 epsilon(1 / (|L| + 1)); &(6)\
+    0 < |x - a| < delta_3 &=> |f(x) - L| < 1/2 epsilon(1/(|M| + 1)). &(7)$ 
+
+#set align(left)
+
+(5) comes from the fact that $lim_(x -> a)f(x) = L$, so a $delta_1 > 0$ exists for every $epsilon > 0$. In this case of (5), $epsilon = 1$. While (6) and (7) may look confusing, they once again stem from the limits established at the very beginning when the limit laws were introduced. For instance, since $lim_(x -> a)g(x) = M$, a $delta_2 > 0$ exists for every $epsilon > 0$. $epsilon$ is fundamentally a positive value, and so is $1/2 epsilon(1/(|L| + 1))$, justifying (6).
+
+Resuming the proof, we let $delta = min(delta_1, delta_2, delta_3)$. Then
+
+#set align(center)
+
+$0 < |x - a| < delta => |f(x)g(x) - L M| < 1/2 epsilon + 1/2 epsilon = epsilon,$
+
+#set align(left)
+
+proving (iii). This final step is justified as so: (4) showed that 
+
+#set align(center)
+
+$|f(x)g(x) - L M| <= |f(x)||g(x) - M| + (|M| + 1)|f(x) - L|.$
+
+#set align(left)
+
+Since $|f(x)| < |L| + 1$ from (5), and $|g(x) - M| < 1/2 epsilon(1/(|L| + 1))$ from (6),
+
+#set align(center)
+
+$|f(x)||g(x) - M| < (|L| + 1)[1/2 epsilon(1/(|L| + 1))] = 1/2 epsilon$.
+
+#set align(left)
+
+Since $|f(x) - L| < 1/2 epsilon(1/(|M| + 1))$,
+
+#set align(center)
+
+$(|M| + 1)|f(x) - L| < (|M| + 1)[1/2 epsilon(1/(|M| + 1))] = 1/2 epsilon$,
+
+#set align(left)
+
+justifying the final step.
+
+To prove (iv), we take advantage of the fact that
+
+#set align(center)
+
+$lim_(x -> a)[f(x)/g(x)] = lim_(x -> a)[f(x) dot 1/g(x)]$
+
+#set align(left)
+
+due to (iii), so all that is needed is to show that
+
+#set align(center)
+
+$lim_(x -> a)[1/g(x)] = [1/M]$.
+
+#set align(left)
+
+If $g(x) != 0$, then
+
+#set align(center)
+
+#text(size: 12pt)[$#h(57pt) abs(1/g(x) - 1/M) = abs(g(x) - M)/(|M||g(x)|) #h(57pt) (1)$]
+
+#set align(left)
+
+Let $delta_1 > 0$ where
+
+#set align(center)
+
+$0 < |x - a| < delta_1 => |g(x) - M| < 1/2 |M|$
+
+#set align(left)
+
+so that
+
+#set align(center)
+
+$#h(80pt) |g(x)| > 1/2 |M| #h(80pt) (2)$ 
+
+#text(size: 12pt)[$1/(|g(x)|) < 2/(|M|) #h(22pt)$]
+
+#set align(left)
+
+which means
+
+#set align(center)
+
+$#h(50pt) abs(1/g(x) - 1/M) < 2/(|M|^2)abs(g(x) - M). #h(49pt) (3)$
+
+#set align(left)
+
+For (2), we know that the distance between $g(x)$ and $M$ is smaller than $1/2 |M|$. This means that $1/2 abs(M) < abs(g(x)) < 3/2 abs(M)$, so $abs(g(x)) > 1/2 abs(M)$. (3) is achieved by substituting $1/abs(g(x))$ in (1) with $2/abs(M)$.
+
+Let $epsilon > 0$ be provided and $delta_2 > 0$ such that
+
+#set align(center)
+
+$0 < abs(x - a) < delta_2 => abs(g(x) - M) < abs(M)^2/2 epsilon$.
+
+#set align(left)
+
+If $delta = min(delta_1, delta_2)$, then
+
+#set align(center)
+
+$0 < abs(x - a) < delta => abs(1/g(x) - 1/M) < 2/abs(M)^2 dot abs(M)^2/2 epsilon = epsilon$,
+
+#set align(left)
+
+the final step coming from substituting $abs(g(x) - M)$ in (3) with $abs(M)^2/2 epsilon$. This concludes the proof of (iv) and ultimately Theorem 2 in its entirety. It is interesting seeing how they are, in essence, results of brief sequences of subtle algebraic manipulations.
