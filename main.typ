@@ -296,7 +296,7 @@ Let $delta = min(delta_1, delta_2)$. If $0 < |x - c| < delta$, then
 
 #set align(center)
 
-$|[f(x) - g(x)| - (L - M)] &= |[f(x) - L] + [M - g(x)]| \
+$abs([f(x) - g(x)| - (L - M)]) &= abs([f(x) - L] + [M - g(x)]) \
     &<= |f(x) - L| + |M - g(x)| = |f(x) - L| + |g(x) - M| \
     &< 1/2 epsilon + 1/2 epsilon = epsilon,$
 
@@ -381,7 +381,7 @@ If $g(x) != 0$, then
 
 #set align(center)
 
-#text(size: 12pt)[$#h(57pt) abs(1/g(x) - 1/M) = abs(g(x) - M)/(|M||g(x)|) #h(57pt) (1)$]
+#text(size: 12pt)[$#h(80pt) abs(1/g(x) - 1/M) = abs(g(x) - M)/(|M||g(x)|) #h(80pt) $] $(1)$
 
 #set align(left)
 
@@ -397,7 +397,7 @@ so that
 
 #set align(center)
 
-$#h(80pt) |g(x)| > 1/2 |M| #h(80pt) (2)$ 
+$#h(104pt) |g(x)| > 1/2 |M| #h(104pt) (2)$ 
 
 #text(size: 12pt)[$1/(|g(x)|) < 2/(|M|) #h(22pt)$]
 
@@ -407,7 +407,7 @@ which means
 
 #set align(center)
 
-$#h(50pt) abs(1/g(x) - 1/M) < 2/(|M|^2)abs(g(x) - M). #h(49pt) (3)$
+$#h(73pt) abs(1/g(x) - 1/M) < 2/(|M|^2)abs(g(x) - M). #h(73pt) (3)$
 
 #set align(left)
 
