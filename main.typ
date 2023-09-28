@@ -504,3 +504,5 @@ $0 < abs(x - a) < delta => L - epsilon < g(x) <= f(x) <= h(x) < L + epsilon \
 
 and thus the theorem is proven.
 
+potato
+
