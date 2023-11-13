@@ -5,19 +5,10 @@
 
 #set align(center)
 
-= The Nonstandard Approach
+= References
 
-#set align(left)
-
-#text(14pt)[
-  Introduction
-]
-
-The introduction follows sections 1.4 and 1.5 of
-
-#set align(center)
+https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/
 
 Keisler, H. (1976). _Foundations of Infinitesimal Calculus_, Prindle Weber & Schmidt.
 
-#set align(left)
-
+Simmons, G. (1996). _Calculus With Analytic Geometry_ (2nd ed.), Mcgraw-Hill Education.

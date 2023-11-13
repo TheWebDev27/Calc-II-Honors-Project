@@ -106,7 +106,7 @@ I intend to explore two approaches of rigorously defining the limit. The first e
 
 #set align(center)
 
-Simmons, G. (1996). _Calculus With Analytic Geometry_ (2nd ed.) Mcgraw-Hill Education.
+Simmons, G. (1996). _Calculus With Analytic Geometry_ (2nd ed.), Mcgraw-Hill Education.
 
 #set align(left)
 
@@ -252,7 +252,7 @@ $0 < |x - a| < delta_2 => |f(x) - M| < 1/2 epsilon$.
 
 For those who are unfamiliar with the $=>$ symbol, it means that the statement following it is implied (or logically follows) from the statement preceding the symbol.
 
-The $1/2$ in front of the $epsilon$'s may cause some confusion, but recall that when $lim_(x -> c)f(x) = L$, the epsilon-delta definition tells us that there exists a set of $x$'s lying within some distance $delta$ from $c$ such that the distance between $f(x)$ and $L$ is always less than $epsilon$. Knowing this, it is then clear that if there exists $delta > 0$ such that $|f(x) - L| < 1/2 epsilon$ for some $epsilon > 0$, then $|f(x) - L| < epsilon$ is also implied, because $1/2 epsilon$ is smaller than $epsilon$.
+The $1/2$'s in front of the $epsilon$'s may cause some confusion, but recall that when $lim_(x -> c)f(x) = L$, the epsilon-delta definition tells us that there exists a set of $x$'s lying within some distance $delta$ from $c$ such that the distance between $f(x)$ and $L$ is always less than $epsilon$. Knowing this, it is then clear that if there exists $delta > 0$ such that $|f(x) - L| < 1/2 epsilon$ for some $epsilon > 0$, then $|f(x) - L| < epsilon$ is also implied, because $1/2 epsilon$ is smaller than $epsilon$.
 
 Continuing the proof, we let $delta = min(delta_1, delta_2)$. If $0 < |x - a| < delta$, then
 
@@ -272,7 +272,7 @@ $|x + y| <= |x| + |y|$.
 
 #set align(left)
 
-It essentially says that the distance between the sum of two numbers and 0 can be no more than the combined distances of $x$ to 0 and $y$ to 0. For example, let $x = 2$ and $y = 3$. Therefore, $|x + y| = 5 = |x| + |y|$. In general, $|x + y| = |x| + |y|$ when either a) both numbers are of the same sign or b) at least one of the numbers is 0. Let $x = -2$ and $y = 3$. We then have $|x + y| = 1 < |x| + |y| = 5$. In general, $|x + y| < |x| + |y|$ if $x,y != 0$ and are of opposite sign. It can ultimately be seen that $|x + y|$ is in fact less than or equal to $|x| + |y|$. As for the limit proof, the two values involved in the triangle inequality are $f(x) - L$ and $g(x) - M$. 
+It essentially says that the distance between the sum of two numbers and 0 can be no more than the combined distances of $x$ to 0 and $y$ to 0. For example, let $x = 2$ and $y = 3$. Therefore, $|x + y| = 5 = |x| + |y|$. In general, $|x + y| = |x| + |y|$ when either a) both numbers are of the same sign or b) at least one of the numbers is 0. Let $x = -2$ and $y = 3$. We then have $|x + y| = 1 < |x| + |y| = 5$. In general, $|x + y| < |x| + |y|$ if $x,y != 0$ and are of opposite sign. It can ultimately be seen that $|x + y|$ is in fact less than or equal to $|x| + |y|$. Regarding the limit proof above, the two values involved in the triangle inequality are $f(x) - L$ and $g(x) - M$. 
 
 (3) substitutes both $|f(x) - L|$ and $|g(x) - M|$ for $1/2 epsilon$. Since $|f(x) - L| < 1/2 epsilon$ and $|g(x) - M| < 1/2 epsilon$, it follows that $|f(x) - L| + |g(x) - M| < 1/2 epsilon + 1/2 epsilon$. The theorem is ultimately proven, because the difference between the function, $f(x) + g(x)$, and the desired limit, $L + M$, was shown to be less than any $epsilon > 0$ given an appropriate $delta$.
 
@@ -297,7 +297,8 @@ Let $delta = min(delta_1, delta_2)$. If $0 < |x - c| < delta$, then
 #set align(center)
 
 $abs([f(x) - g(x)| - (L - M)]) &= abs([f(x) - L] + [M - g(x)]) \
-    &<= |f(x) - L| + |M - g(x)| = |f(x) - L| + |g(x) - M| \
+    &<= |f(x) - L| + |M - g(x)| \
+    &= |f(x) - L| + |g(x) - M| \
     &< 1/2 epsilon + 1/2 epsilon = epsilon,$
 
 #set align(left)
@@ -325,7 +326,7 @@ $0 < |x - a| < delta_1 &=> |f(x) - L| < 1 => |f(x)| < |L| + 1; #h(40pt) &(5)\
 
 #set align(left)
 
-(5) comes from the fact that $lim_(x -> a)f(x) = L$, so a $delta_1 > 0$ exists for every $epsilon > 0$. In this case of (5), $epsilon = 1$. While (6) and (7) may look confusing, they once again stem from the limits established at the very beginning when the limit laws were introduced. For instance, since $lim_(x -> a)g(x) = M$, a $delta_2 > 0$ exists for every $epsilon > 0$. $epsilon$ is fundamentally a positive value, and so is $1/2 epsilon(1/(|L| + 1))$, justifying (6).
+(5) comes from the fact that $lim_(x -> a)f(x) = L$, so a $delta_1 > 0$ exists for every $epsilon > 0$. In the case of (5), $epsilon = 1$. While (6) and (7) may look confusing, they once again stem from the definition of the limit. For instance, since $lim_(x -> a)g(x) = M$, a $delta_2 > 0$ exists for every $epsilon > 0$. $epsilon$ is fundamentally a positive value, which makes $1/2 epsilon(1/(|L| + 1))$ also positive, justifying (6).
 
 Resuming the proof, we let $delta = min(delta_1, delta_2, delta_3)$. Then
 
@@ -389,7 +390,7 @@ Let $delta_1 > 0$ where
 
 #set align(center)
 
-$0 < |x - a| < delta_1 => |g(x) - M| < 1/2 |M|$
+$#h(50pt) 0 < |x - a| < delta_1 => |g(x) - M| < 1/2 |M| #h(50pt) (2)$
 
 #set align(left)
 
@@ -397,7 +398,7 @@ so that
 
 #set align(center)
 
-$#h(104pt) |g(x)| > 1/2 |M| #h(104pt) (2)$ 
+$|g(x)| > 1/2 |M|$ 
 
 #text(size: 12pt)[$1/(|g(x)|) < 2/(|M|) #h(22pt)$]
 
@@ -411,7 +412,7 @@ $#h(73pt) abs(1/g(x) - 1/M) < 2/(|M|^2)abs(g(x) - M). #h(73pt) (3)$
 
 #set align(left)
 
-For (2), we know that the distance between $g(x)$ and $M$ is smaller than $1/2 |M|$. This means that $1/2 abs(M) < abs(g(x)) < 3/2 abs(M)$, so $abs(g(x)) > 1/2 abs(M)$. (3) is achieved by substituting $1/abs(g(x))$ in (1) with $2/abs(M)$.
+From (2), we know that the distance between $g(x)$ and $M$ is smaller than $1/2 |M|$. This means that $1/2 abs(M) < abs(g(x)) < 3/2 abs(M)$, so $abs(g(x)) > 1/2 abs(M)$. (3) is achieved by substituting $1/abs(g(x))$ on the right hand side of  (1) with $2/abs(M)$.
 
 Let $epsilon > 0$ be provided and $delta_2 > 0$ such that
 
@@ -430,6 +431,8 @@ $0 < abs(x - a) < delta => abs(1/g(x) - 1/M) < 2/abs(M)^2 dot abs(M)^2/2 epsilon
 #set align(left)
 
 the final step coming from substituting $abs(g(x) - M)$ in (3) with $abs(M)^2/2 epsilon$. This concludes the proof of (iv) and ultimately Theorem 2 in its entirety. It is interesting seeing how the limit laws are, in essence, results of brief sequences of subtle algebraic manipulations.
+
+\
 
 The final application of the epsilon-delta limit that will be analyzed is the classic *squeeze theorem*. 
 
@@ -450,7 +453,7 @@ The final application of the epsilon-delta limit that will be analyzed is the cl
 
         #set align(left)
 
-        for all x satisfying the inequalities $0 < abs(x - a) < p$, and if $lim_(x -> a)g(x) = L$ and $lim_(x -> a)h(x) = L$, then
+        for all $x$ satisfying the inequalities $0 < abs(x - a) < p$, and if $lim_(x -> a)g(x) = L$ and $lim_(x -> a)h(x) = L$, then
 
         #set align(center)
 
@@ -465,7 +468,7 @@ The final application of the epsilon-delta limit that will be analyzed is the cl
 
 #set align(left)
 
-If a function $f(x)$ is known to always lie between two other functions $g(x)$ and $h(x)$, and $g(x)$ and $h(x)$ both approach the same limit $L$ as $x$ goes to $a$, then $f(x)$ must also approach $L$. For example, consider the functions displayed in Figure 3. We can show that $x^2cos(1/x)$ lies in between $x^2$ and $-x^2$ like so:
+If a function $f(x)$ is bounded between two other functions $g(x)$ and $h(x)$, and $g(x)$ and $h(x)$ both approach the same limit $L$ as $x$ goes to $a$, then $f(x)$ is "squeezed" into the same limit $L$. For example, consider the functions displayed in Figure 3. We can show that $x^2cos(1/x)$ lies in between $x^2$ and $-x^2$ like so:
 
 #set align(center)
 
