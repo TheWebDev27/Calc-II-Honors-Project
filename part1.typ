@@ -1,3 +1,7 @@
+#set par(
+  leading: .75em
+)
+
 #set text(
     font: "New Computer Modern",
     size: 16pt
@@ -90,13 +94,13 @@ $lim_(x -> infinity)x^2 = infinity$
 
 #set align(left)
 
-Limits are a result of *analysis*, an area of mathematics that deals with continuous change and continuous functions, broadly speaking. I intend to explore and compare two different branches of analysis that ultimately lead to the same results encountered in calculus. One relies on a rigorous employment of the limit, while the other abandons the idea of limits entirely in favor of a concept utilized in the upbringing of calculus over the past several centuries.
+Limits are a result of *analysis*, an area of mathematics that deals with continuous change and continuous functions, broadly speaking. I intend to not only explore and compare two different branches of analysis that ultimately lead to the same results encountered in calculus, but to do so in a meticulously pedagogical manner. One branch relies on a rigorous definition of the limit, while the other abandons the idea of limits entirely in favor of a concept utilized in the upbringing of calculus over the past several centuries. 
 
 #set align(center)
 
 #v(20pt)
 
-= The Classical Approach
+= The Standard Approach
 
 #set align(left)
 
@@ -104,7 +108,7 @@ Limits are a result of *analysis*, an area of mathematics that deals with contin
   Introduction
 ]
 
-*Real analysis* is the study of functions, sequences, and sets involving real numbers, and it is employed as the traditional means of formalizing the mechanisms presented in calculus courses. My overview of how real analysis builds toward certain calculus principles will follow section A.2 of Appendix A in 
+*Real analysis* is the study of functions, sequences, and sets involving real numbers, and it is used as the traditional means of formalizing the mechanisms presented in calculus courses. This overview of how real analysis builds toward certain calculus principles will follow section A.2 of Appendix A in 
 
 #set align(center)
 
@@ -112,17 +116,9 @@ Simmons, G. (1996). _Calculus With Analytic Geometry_ (2nd ed.), Mcgraw-Hill Edu
 
 #set align(left)
 
-Being mindful of the fact that the absolute value of the difference between two values $a$ and $b$,
+Being mindful of the fact that the absolute value of the difference between any two values, $abs(a-b)$, represents the distance between them will greatly aid in understanding the notation that follows. The limit is defined like so:
 
-#set align(center)
-
-
-$|a - b|$,
-
-#set align(left)
-
-represents the distance between them will greatly aid in understanding the notation that follows. The limit is defined in the following manner:
-
+#set text(font: "Source Serif")
 #set align(center)
 
 #grid(
@@ -168,14 +164,15 @@ represents the distance between them will greatly aid in understanding the notat
     ]
 )
 
+#set text(font: "New Computer Modern")
 #set align(left)
 
-This definition states that $f(x)$ approaches some value $L$ as $x$ approaches a certain value $c$ if it can be shown that, for any set of outputs that lie within some distance $epsilon$ from $L$, there exists a corresponding set of inputs ($x$'s) that lie within some distance $delta$ from $c$ which _guarantees_ that $f(x)$ falls within said range ($epsilon$) of $L$. In this sense, we can bring the range of outputs as close as we want to $L$ (letting epsilon go to 0) while being absolutely sure that $f(x)$ lies within it. This is known as the *epsilon-delta definition* of the limit.
+This definition states that $f(x)$ approaches some value $L$ as $x$ approaches a some number $c$ if it can be shown that, for any set of outputs that lie within some distance $epsilon$ from $L$, there exists a corresponding set of inputs ($x$'s) that lie within some distance $delta$ from $c$ which _guarantees_ that $f(x)$ falls within said range ($epsilon$) of $L$. In this sense, we can bring the range of outputs as close as we want to $L$ (letting epsilon go to 0) while being absolutely sure that $f(x)$ lies within it. This is known as the \ *epsilon-delta definition* of the limit.
 
 #set text(9pt)
 
 #figure(
-    image("images/epsilon-delta limit visualization.png", width: 65%),
+    image("images/epsilon-delta limit.png", width: 65%),
     caption: [Epsilon-delta definition of the limit visualized]
 )
 
@@ -187,11 +184,11 @@ This complication can be readily resolved by letting $delta$ equal the smaller o
 
 #set align(center)
 
-$delta = min(delta_1 , delta_2)$
+$delta = min(delta_1 , delta_2)$.
 
 #set align(left)
 
-$min()$ is shorthand for taking the smallest value amongst the set of numbers present between the parentheses. For instance, if $x = min(1, 2, 3)$, then $x = 1$. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 < delta_2$ and that $|x - c| < delta_2$ implies $|f(x) - L| < epsilon$. If $|x - c| < delta_1$, then $|x - c| < delta_2$ since $delta_1 < delta_2$. It is therefore assured that $|f(x) - L| < epsilon$. \ \
+$min()$ is shorthand for taking the smallest value amongst the set of numbers present between the parentheses. For instance, if $x = min(1, 2, 3)$, then $x = 1$. Allowing $delta$ to be defined in this way works because of the following reasoning: Assume that $delta_1 < delta_2$ and that $|x - c| < delta_2$ implies $|f(x) - L| < epsilon$ for some input $x$. If $|x - c| < delta_1$, then $|x - c| < delta_2$ since $delta_1 < delta_2$. It is therefore assured that $|f(x) - L| < epsilon$. \ \
 
 #text(14pt)[
   Employing the Definition
@@ -199,6 +196,7 @@ $min()$ is shorthand for taking the smallest value amongst the set of numbers pr
 
 The epsilon-delta definition of the limit can now be used to prove various properties of functions. As a basic example, consider the following theorem:
 
+#set text(font: "Source Serif")
 #set align(center)
 
 #grid(
@@ -216,12 +214,19 @@ The epsilon-delta definition of the limit can now be used to prove various prope
     ]
 )
 
+#set text(font: "New Computer Modern")
 #set align(left)
 
-To prove this, choose some $epsilon > 0$, and let $delta = epsilon$. For any $x$ satisfying the inequalities $0 < |x - a| < delta$, we know that $|f(x) - a| < epsilon$. This is because $f(x) = x$, and $delta = epsilon$. The theorem is therefore proven. 
+In order to prove this limit, we need to demonstrate that for any set of outputs that lie within $epsilon$ of the limit ($a$), there exists a corresponding set of inputs that lie within $delta$ of $x=a$ that assures that the output of $f(x)=x$ lies within the distance $epsilon$ from $a$.
+
+To start, choose some $epsilon > 0$, and let $delta = epsilon$. For any $x$ satisfying the inequalities $0 < |x - a| < delta$, we know that $|f(x) - a| < epsilon$. This is because $f(x) = x$, and $delta = epsilon$. The theorem is therefore proven. 
+
+#pagebreak()
+
 
 We can also prove some essential limit laws: their sums, differences, products, and quotients. 
 
+#set text(font: "Source Serif")
 #set align(center)
 
 #grid(
@@ -237,14 +242,15 @@ We can also prove some essential limit laws: their sums, differences, products, 
             columns: (20pt, auto),
             align: (right, left),
             stroke: none,
-            [(i)], $lim_(x -> a)[f(x) + g(x))] = L + M$,
+            [(i)], $lim_(x -> a)[f(x) + g(x)] = L + M$,
             [(ii)], $lim_(x -> a)[f(x - g(x))] = L - M$,
             [(iii)], $lim_(x -> a)f(x)g(x) = L M$,
-            [(iv)], $lim_(x -> a)f(x)/g(x) = L/M$
+            [(iv)], $display(lim_(x -> a)f(x)/g(x) = L/M)$
         )
     ]
 )
 
+#set text(font: "New Computer Modern")
 #set align(left)
 
 To prove (i), we let $epsilon > 0$ be given and allow $delta_1, delta_2 > 0$ where
@@ -263,7 +269,7 @@ $0 < |x - a| < delta_2 => |f(x) - M| < 1/2 epsilon$.
 
 #set align(left)
 
-For those who are unfamiliar with the $=>$ symbol, it means that the statement following it is implied (or logically follows) from the statement preceding the symbol.
+For those unfamiliar with the $=>$ symbol, it means that the statement following it is implied (or logically follows) from the statement preceding the symbol.
 
 The $1/2$'s in front of the $epsilon$'s may cause some confusion, but recall that when $lim_(x -> c)f(x) = L$, the epsilon-delta definition tells us that there exists a set of $x$'s lying within some distance $delta$ from $c$ such that the distance between $f(x)$ and $L$ is always less than $epsilon$. Knowing this, it then follows that if there exists $delta > 0$ such that $|f(x) - L| < 1/2 epsilon$ for some $epsilon > 0$, then $|f(x) - L| < epsilon$, because $1/2 epsilon$ is smaller than $epsilon$.
 
@@ -271,13 +277,13 @@ Continuing the proof, we let $delta = min(delta_1, delta_2)$. If $0 < |x - a| < 
 
 #set align(center)
 
-$|[f(x) + g(x)] - (L + M)| &= |[f(x) - L] + [g(x) - M]| #h(40pt) &(1)\
+$abs([f(x) + g(x)] - (L + M)| &= |[f(x) - L] + [g(x) - M]) #h(40pt) &(1)\
     &<= |f(x) - L| + |g(x) - M| &(2)\
     &< 1/2 epsilon + 1/2 epsilon = epsilon, &(3)$
 
 #set align(left)
 
-proving (i). Analyzing the three-step sequence above in further detail: (1) simply takes advantage of the associative property of addition and moves terms around. (2) is a subtle application of the distances variation of the *triangle inequality* which states that, for real numbers $x$ and $y$,
+proving (i). Analyzing the three-step sequence above in further detail: (1) takes advantage of the associative property of addition and moves terms around. (2) is a subtle application of the distances variation of the *triangle inequality* which states that, for real numbers $x$ and $y$,
 
 #set align(center)
 
@@ -296,6 +302,14 @@ $abs(x+y)=abs(3-1)=2<4=abs(3)+abs(-1)=abs(x)+abs(y)$.
 While a formal proof is omitted, it may help to think of this inequality in terms of walking in two opposite directions. In particular, let positive numbers represent walking forward one way, while negative numbers represent walking backwards the other way. Therefore, if 0 is the position where one starts, $abs(x+y)$ represents the distance one stands from 0 after some combination of walking forwards and backwards, while $abs(x) + abs(y)$ represents the #emph[total] distance walked. The distance from 0 can only ever be as large as the total distance walked (by walking only forwards or backwards), so $|x + y| <= |x| + |y|$.
 
 Returning to the limit proof, the two values involved in the triangle inequality are $f(x) - L$ and $g(x) - M$. (3) substitutes both $|f(x) - L|$ and $|g(x) - M|$ for $1/2 epsilon$. Since $|f(x) - L| < 1/2 epsilon$ and $|g(x) - M| < 1/2 epsilon$, it follows that $|f(x) - L| + |g(x) - M| < 1/2 epsilon + 1/2 epsilon$. The theorem is ultimately proven, because the difference between the function, $f(x) + g(x)$, and the desired limit, $L + M$, was shown to be less than any $epsilon > 0$ given an appropriate $delta$.
+
+#pagebreak()
+
+#set text(font: "Source Serif")
+
+*(ii)* $lim_(x -> a)[f(x - g(x))] = L - M$
+
+#set text(font: "New Computer Modern")
 
 The proof of (ii) is similar to that of (i). We once again allow $delta_1, delta_2 > 0$ where
 
@@ -324,9 +338,15 @@ $abs([f(x) - g(x)| - (L - M)]) &= abs([f(x) - L] + [M - g(x)]) \
 
 #set align(left)
 
-proving (ii).
+proving (ii). \ \
 
-To prove (iii), we add and subtract $f(x)M$ to help relate the quantity $f(x)g(x) - L M$ to the differences $f(x) - L$ and $g(x) - M$:
+#set text(font: "Source Serif")
+
+*(iii)* $lim_(x -> a)f(x)g(x) = L M$
+
+#set text(font: "New Computer Modern")
+
+Proving (iii) is more complicated. We being by adding and subtracting $f(x)M$ to help relate the quantity $f(x)g(x) - L M$ to the differences $f(x) - L$ and $g(x) - M$:
 
 #set align(center)
 
@@ -382,7 +402,13 @@ $display((|M| + 1)|f(x) - L| < (|M| + 1)[1/2 epsilon(1/(|M| + 1))] = 1/2 epsilon
 
 #set align(left)
 
-justifying the final step.
+justifying the final step. \ \
+
+#set text(font: "Source Serif")
+
+*(iv)* $display(lim_(x -> a)f(x)/g(x) = L/M)$
+
+#set text(font: "New Computer Modern")
 
 To prove (iv), we take advantage of the fact that
 
@@ -430,7 +456,7 @@ which means
 
 #set align(center)
 
-#h(63pt) $display(abs(1/g(x) - 1/M) < 2/(|M|^2) abs(g(x) - M))$. #h(63pt) (3)
+#h(65pt) $display(abs(1/g(x) - 1/M) < 2/(|M|^2) abs(g(x) - M))$. #h(65pt) (3)
 
 #set align(left)
 
@@ -458,10 +484,11 @@ $0 < abs(x - a) < delta =>display(abs(1/g(x) - 1/M)) < display(2/abs(M)^2) dot d
 
 #v(3pt) the final step coming from substituting $abs(g(x) - M)$ in (3) with $display(abs(M)^2/2 epsilon)$. This concludes the proof of (iv) #v(-3pt) and ultimately Theorem 2 in its entirety. It is interesting seeing how the limit laws are, in essence, results of brief sequences of subtle algebraic manipulations.
 
-\
+#pagebreak()
 
 The final application of the epsilon-delta limit that will be analyzed is the classic *squeeze theorem*. 
 
+#set text(font: "Source Serif")
 #set align(center)
 
 #grid(
@@ -487,6 +514,7 @@ The final application of the epsilon-delta limit that will be analyzed is the cl
     ]
 )
 
+#set text(font: "New Computer Modern")
 #set text(9pt)
 
 #figure(
@@ -498,16 +526,16 @@ The final application of the epsilon-delta limit that will be analyzed is the cl
 
 #set align(left)
 
-If a function $f(x)$ is bounded between two other functions $g(x)$ and $h(x)$, and $g(x)$ and $h(x)$ both approach the same limit $L$ as $x$ goes to $a$, then $f(x)$ is "squeezed" into the same limit $L$. For example, consider the functions displayed in Figure 3. We can show that $x^2cos(1/x)$ lies in between $x^2$ and $-x^2$ like so:
+If a function $f(x)$ is bounded between two other functions $g(x)$ and $h(x)$, and $g(x)$ and $h(x)$ both approach the same limit $L$ as $x arrow a$, then $f(x)$ is "squeezed" toward $L$. For example, consider the functions $f(x)=x^2 cos (1/(x^2)), g(x) = x^2,$ and $h(x)=-x^2$ displayed in Figure 3. We can show that $x^2cos(1/(x^2))$ lies in between $x^2$ and $-x^2$ like so:
 
 #set align(center)
 
-$-1 <= cos(x) <= 1 \
-    -x^2 <= x^2cos(x) <= x^2$
+$display(-1 <= cos(1/(x^2)) <= 1 \
+    -x^2 <= x^2cos(1/(x^2)) <= x^2).$
 
 #set align(left)
 
-Since $lim_(x -> 0)-x^2 = lim_(x -> 0)x^2 = 0$, the squeeze theorem tells us that $lim_(x -> 0)x^2cos(1/x) = 0$.
+Since $lim_(x -> 0)-x^2 = lim_(x -> 0)x^2 = 0$, the squeeze theorem tells us that $lim_(x -> 0)x^2cos(1/(x^2)) = 0$.
 
 To prove the theorem, let $epsilon > 0$ be provided, and choose $delta_1, delta_2 > 0$ where
 
@@ -535,6 +563,8 @@ $0 < abs(x - a) < delta => L - epsilon < g(x) <= f(x) <= h(x) < L + epsilon \
 
 #set align(left)
 
-and thus the theorem is proven. \ \
+and thus the theorem is proven.
 
-As a whole, we see how real analysis employs a delicate system of distances and algebraic manipulations involving them in order to concisely define what exactly a limit is and how its definition can be used to prove related theorems. This system is then used as a base to build up toward various other ideas in calculus including differentiation and integration. Such details will not be covered, as \ i) the goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and ii) they warrant a deeper level of study that lies far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches various ideas of calculus without the concept of limits.
+#pagebreak()
+
+As a whole, we see how real analysis employs a delicate system of distances and algebraic manipulations in order to concisely define what exactly a limit is and how its definition can be used to prove related theorems. This system is then used as a base to build up toward various other ideas in calculus including differentiation and integration. Such details will not be covered, as \ 1) the goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and 2) they warrant a deeper level of study far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches various ideas of calculus without the concept of limits. \ \
