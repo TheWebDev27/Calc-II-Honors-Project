@@ -30,7 +30,7 @@ We now employ nonstandard analysis to prove the incredible fundamental theorem o
   ]
 )
 
-#set text(font: "New Computer Modern Math")
+#set text(font: "New Computer Modern")
 #set text(9pt)
 
 #figure(
@@ -91,9 +91,31 @@ $#h(82pt) f(x + delta x) - f(x) &= f'(x) dot delta x + epsilon dot delta x$, #h(
 
 #set align(left)
 
-where $epsilon$ and $delta x$ are both infinitesimal. (2) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$, and this product is even smaller than $delta x$. \ \
+where $epsilon$ and $delta x$ are both infinitesimal. (2) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$, and this product is significantly smaller than $delta x$ which is already infinitesimal. The result has been shown.
 
-We are now ready to prove the first fundamental theorem of calculus.
+A brief review of Riemann sums is warranted as well. A *Riemann sum* is an approximation of the area under a curve via a division into small rectangles. Consider a function $f(x)$ continuous on the interval $[a,b]$. The rectangles are obtained by first partitioning the interval $[a,b]$ into $n$ subintervals, so each partition point $x_k$ is given by
+
+#set align(center)
+
+$display(x_k = a + (k(b-a))/n)$, 
+
+#set align(left)
+
+where $0 <= k <= n$, $k$ is a positive integer, and $display((b-a)/n)$ represents the length of each subinterval. The subintervals act as bases for the rectangles, and the rectangles' heights depend on $f(x)$. For the upcoming proof, we will be focused on the *left Riemann sum*, where the height of each rectangle is determined by the left endpoints of the subintervals. With this concept, the area is approximated by:
+
+#set align(center)
+
+$display(sum_(k=1)^n f[((k-1)(b-a))/n] dot Delta x)$,
+
+#set align(left)
+
+where $display(f[((k-1)(b-a))/n])$ is the height of the $k$th rectangle and $Delta x$ is the increment. A more thorough explanation of this summation is not necessary, as the proof that follows relies on a variation of it that will indeed be closely looked at.
+
+\
+
+#set align(left)
+
+We are now ready to prove the fundamental theorem of calculus.
 
 #set text(font: "Source Serif")
 #set align(center)
@@ -127,16 +149,6 @@ We are now ready to prove the first fundamental theorem of calculus.
 
 If $F(x)$ is an *antiderivative* of $f(x)$, or $d/(d x)F(x) = f(x)$, over the interval $[a, b]$, then the integral of $f(x)$ on said interval is simply the difference between $F(x)$ evaluated at $x=b$ and $x=a$.
 
-As a reminder, a *Riemann sum* is an approximation of the area under a curve via a division into small rectangles. These rectangles are obtained by first partitioning the interval $[a,b]$ into $n$ subintervals where each partition point $x_k$ is given by
-
-#set align(center)
-
-$display(x_k = a + (k(b-a))/n)$, 
-
-#set align(left)
-
-where $0 <= k <= n$ and $k$ is a positive integer.Each subinterval acts as a base for a rectangle, and the rectangles' heights depend on $f(x)$. For example, if the interval ($$)Riemann sums are essentially summations ($sum$), so $n$ acts as an *increment*. For the proof, we will be focused on a variation of this concept known as the *left Riemann sum*, where the height of each rectangle is determined by the left endpoints of the subintervals.
-
 #set align(center)
 
 #figure(
@@ -145,14 +157,123 @@ where $0 <= k <= n$ and $k$ is a positive integer.Each subinterval acts as a bas
 )
 
 #set align(left)
-#pagebreak()
 
 The integral is approximated by the left Riemann sum of $f(x)$ from $a$ to $b$ where the increment is an infinitesimal $delta x$:
 
 #set align(center)
 
-$display(integral_a^b f(x)d x approx sum_(x=a \ #text[step] delta x)^(b-delta x) f(x) dot delta x)$, where $delta x approx 0$.
+#h(65pt) $display(integral_a^b f(x)d x approx sum_(x=a \ #text[step] delta x)^(b-delta x) f(x) dot delta x)$, where $delta x approx 0$. #h(65pt) (3)
 
 #set align(left)
 
-In this case, one can imagine the visual shown in Figure 10 but instead with the area divided up into an infinitely large number of rectangles. Notice how the summation only increments from $a$ to $b - delta x$, as $f(b - delta x)$ corresponds to the height of the final rectangle toward the right of Figure 10.
+The notation of the summation in (3) may perplex readers who are familiar with 
+
+#set align(center)
+
+$display(sum_(k=1)^n) a_k$
+
+#set align(left)
+
+where $k$ is the *index* and $a_k$ is the $k$th term in the sum. The same thing is happening in (3), but instead of the index incrementing by 1, it instead increments by $delta x$ -- hence the "step $delta x$".
+
+(3) can be conceptualized with the visual shown in Figure 10 but instead on a far smaller scale with the area divided up into an infinitely large number of rectangles. Notice how the sum only increments from $a$ to $b - delta x$, as $f(b - delta x)$ corresponds to the height of the final rectangle toward the right of Figure 10.
+
+Proceeding with the proof, since $F'(x) = f(x)$, (2) tells us that
+
+#set align(center)
+
+$F(x + delta x) - F(x) = f(x) dot delta x + epsilon dot delta x$.
+
+#set align(left)
+
+We can now sum both sides
+
+#set align(center)
+
+#h(37pt)$display(sum_(x=a \ #text[step ] delta x)^(b-delta x)[F(x + delta x) - F(x)] = sum_(x=a \ #text[step ] delta x)^(b-delta x)f(x) dot delta x + sum_(x=a \ #text[step ] delta x)^(b-delta x) epsilon dot delta x)$, #h(37pt) (4)
+
+#set align(left)
+
+and this produces a telescoping sum on the left. This is because
+
+#set align(center)
+
+$display(sum_(x=a \ #text[step ] delta x)^(b-delta x)[F(x + delta x) - F(x)])$
+
+#v(4pt)
+
+$= [F(a + delta x) - F(a)] - [F(a+2 delta x) - F(a + delta x)] - [F(a + 3 delta x) - F(a + 2 delta x)]  - dots.h.c - [F(b - delta x + delta x) - F(b - delta x)] \
+= F(b') - F(a),$
+
+#set align(left)
+
+where $b'$ is a number that is close to $b$ but not exactly equal. The reason for this is that the $delta x$'s in the quantity $F(b-delta x + delta x)$ are not necessarily the same. The rationale is subtle, but it essentially boils down to the fact that adding a long sequence of infinitesimals to $a$ will not land us exactly on $b$ but on a value very close to it. In particular, the value $b - delta x$ _conceptualizes_ the idea of a number infinitely close to $b$ but does not represent a definite value where $delta x$ cancels out to zero. It's best to think of the quantity $F(b-delta x + delta x)$ as one that lies infinitely close to $F(b)$.
+
+From here, we can now say that
+
+#set align(center)
+
+$display(integral_a^b f(x)d x approx sum_(x=a  \ #text[step] delta x)^(b-delta x)f(x)d x = F(b')-F(a)-sum_(x=a \ #text[step] delta x)^(b-delta x) epsilon dot delta x)$
+
+#set align(left)
+
+which is obtained by replacing the summation on the left of (4) with $F(b') - F(a)$ and subtracting 
+#v(0pt)$display(sum_(x=a \ #text[step] delta x)^(b-delta x) epsilon dot delta x)$ from both sides. Subtracting again gives
+
+#set align(center)
+
+$display(sum_(x=a  \ #text[step] delta x)^(b-delta x)f(x)d x - [F(b') - F(a)] = -sum_(x=a \ #text[step ] delta x)^(b-delta x) epsilon dot delta x)$,
+
+#set align(left)
+
+and taking the absolute value of both sides results in the inequalities
+
+#set align(center)
+
+$display(abs(sum_(x=a  \ #text[step] delta x)^(b-delta x)f(x)d x - [F(b') - F(a)]) <= abs(sum_(x=a \ #text[step ] delta x)^(b-delta x) epsilon dot delta x) <= sum_(x=a \ #text[step ] delta x)^(b-delta x) abs(epsilon) dot delta x)$.
+
+#set align(left)
+
+The first inequality is just a way of saying that if two quantities are equal, then it is technically true that the absolute value of the first quantity cannot be larger than that of the second. It is an important inequality in the proof, as it represents the distance between the approximated integral and the difference of the antiderivative evaluated at (almost) $b$ and $a$, so we want to show that it goes infinitely close to 0. Now why does the second inequality hold? Recall that the triangle inequality states that $abs(a+b) <= abs(a) + abs(b)$ for any numbers $a$ and $b$. In this case, the second inequality is merely an extended triangle inequality. The reader is encouraged to consider the analogy utilized back when the triangle inequality was first introduced and extend the logic to this case and convince themselves of this fact.
+
+If $max(abs(epsilon))$ is the largest term in the summation $display(sum_(x=a \ #text[step ] delta x)^(b-delta x) abs(epsilon) dot delta x)$, then
+
+#set align(center)
+
+#v(2pt)
+
+$display(sum_(x=a \ #text[step ] delta x)^(b-delta x) abs(epsilon) dot delta x <= max(abs(epsilon)) dot sum_(x=a \ #text[step ] delta x)^(b-delta x) delta x = max(abs(epsilon)) dot (b' - a) approx 0).$
+
+#set align(left)
+
+The first inequality can be understood by thinking of the sum
+
+#set align(center)
+
+$1 dot 2 + 2 dot 2 + 3 dot 2 + dots.h.c + 10 dot 2$,
+
+#set align(left)
+
+where each term is given by $a dot 2$ and $a$ is a whole number from 1 through 10. If we now take the maximum value of $a$, 10, and replace every $a$ in the sum with 10, then the sum clearly grows larger.
+
+The equality following the inequality replaces $display(sum_(x=a \ #text[step ] delta x)^(b-delta x) delta x)$ with $(b' - a)$. Remember that these calculations #v(0pt) all stem from applying (2) to the fact that $d/(d x) F(x) = f(x)$, so $epsilon approx 0$, which means 
+
+#set align(center)
+
+$display(max(abs(epsilon)) dot (b' - a) approx 0),$
+
+#set align(left)
+
+so
+
+#set align(center)
+
+$display(integral_a^b f(x)d x approx sum_(x=a \ #text[step ] delta x)^(b-delta x) f(x) delta x approx F(b') - F(a))$.
+
+#set align(left)
+
+Lastly, since $F(x)$ is continuous, $F(b') approx F(b)$ (remember that $b'$ is off from $b$ by merely an infinitesimal amount), so we reach the conclusion that
+
+#set align(center)
+
+$display(integral_a^b f(x)d x = F(b) - F(a)).$
