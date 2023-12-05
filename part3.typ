@@ -277,3 +277,11 @@ Lastly, since $F(x)$ is continuous, $F(b') approx F(b)$ (remember that $b'$ is o
 #set align(center)
 
 $display(integral_a^b f(x)d x = F(b) - F(a)).$
+
+#set align(left)
+
+#text(14pt)[
+  Reflection
+]
+
+The advent of nonstandard analysis lead to the proofs of various results that were not but could have been proven with real analysis. What that entails back then was that the ease of notation helped mathematicians see things that were more hidden from a real analysis perspective. It has been shown, however, that a result proven using one system can readily be proven with the other, and as of today the applications of nonstandard analysis seem to steer toward an area of mathematics that is not particularly connected with other areas. Nonstandard analysis has managed to produce its own set of unique questions and problems. In general, real analysis (and more generally standard analysis) and nonstandard analysis by no means replace each other, but rather serve as two distinct approaches toward anaysis, and a preference toward either approach ultimately comes down to what one is first exposed to on their mathematical endeavors.
