@@ -572,4 +572,15 @@ and thus the theorem is proven.
 
 As a whole, we see how real analysis employs a delicate system of distances and algebraic operations in order to concisely define what exactly a limit is and how its definition can be used to prove related theorems. This system is then used as a base to build up toward various other ideas in calculus including differentiation and integration. Such details will not be covered, as 
 
-\ 1) the goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and \ 2) they warrant a deeper level of study far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches various ideas of calculus without the concept of limits. \ \
+#set align(center)
+
+#grid(
+    columns: 90%,
+    rows: auto,
+    [
+        #set align(left)
+
+        1) The goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and \ 2) They warrant a deeper level of study far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches various ideas of calculus without the concept of limits. \ \
+    ]
+)
+

@@ -77,7 +77,7 @@ We can see in Figure 9 how the slope of the tangent line slightly differs from t
 #set align(center)
 
 $display((f(x_0 + Delta x) - f(x_0))/(Delta x) &= f'(x_0) + epsilon) \
-#h(75pt) f(x + Delta x) - f(x) &= f'(x_0) dot Delta x + epsilon dot Delta x$, #h(75pt) (1)
+f(x + Delta x) - f(x) &= f'(x_0) dot Delta x + epsilon dot Delta x$,
 
 #set align(left)
 
@@ -87,11 +87,11 @@ As $Delta x arrow 0$, the slope of the secant line approaches that of the tangen
 
 #set align(center)
 
-$#h(82pt) f(x + delta x) - f(x) &= f'(x) dot delta x + epsilon dot delta x$, #h(82pt) (2)
+$#h(82pt) f(x + delta x) - f(x) &= f'(x) dot delta x + epsilon dot delta x$, #h(82pt) (3)
 
 #set align(left)
 
-where $epsilon$ and $delta x$ are both infinitesimal. (2) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$, and this product is significantly smaller than $delta x$ which is already infinitesimal. The result has been shown.
+where $epsilon$ and $delta x$ are both infinitesimal. (4) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$, and this product is significantly smaller than $delta x$ which is already infinitesimal. The result has been shown.
 
 A brief review of Riemann sums is warranted as well. A *Riemann sum* is an approximation of the area under a curve via a division into small rectangles. Consider a function $f(x)$ continuous on the interval $[a,b]$. The rectangles are obtained by first partitioning the interval $[a,b]$ into $n$ subintervals, so each partition point $x_k$ is given by
 
@@ -280,8 +280,14 @@ $display(integral_a^b f(x)d x = F(b) - F(a)).$
 
 #set align(left)
 
+A few minutiae are left out for the sake of brevity, and the proof as a whole is far from airtight, but it succeeds in giving us a solid insight as to how the FTC can be argued from the angle of nonstandard analysis.
+
+#pagebreak()
+
 #text(14pt)[
   Reflection
 ]
 
-The advent of nonstandard analysis lead to the proofs of various results that were not but could have been proven with real analysis. What that entails back then was that the ease of notation helped mathematicians see things that were more hidden from a real analysis perspective. It has been shown, however, that a result proven using one system can readily be proven with the other, and as of today the applications of nonstandard analysis seem to steer toward an area of mathematics that is not particularly connected with other areas. Nonstandard analysis has managed to produce its own set of unique questions and problems. In general, real analysis (and more generally standard analysis) and nonstandard analysis by no means replace each other, but rather serve as two distinct approaches toward anaysis, and a preference toward either approach ultimately comes down to what one is first exposed to on their mathematical endeavors.
+The advent of nonstandard analysis lead to proofs of various results that were not unable to be practically proven with real analysis (proving them with real analysis is not impossible, though it would have been exceedingly difficult). What this entails back then was that the ease of notation helped mathematicians see things that were more hidden from a real analysis perspective. It has been shown, however, that a result proven using one system can readily be proven with the other, and as of today the applications of nonstandard analysis seem to steer toward an area of mathematics that is not particularly connected with other areas; nonstandard analysis as a whole has managed to produce its own set of unique questions and problems. In general, real analysis (and more broadly standard analysis) and nonstandard analysis by no means replace each other, but rather serve as two distinct approaches toward anaysis, and a preference toward either approach ultimately comes down to what one is first exposed to on their mathematical endeavors.
+
+#pagebreak()
