@@ -371,7 +371,7 @@ The first implication in (5) comes from the fact that $lim_(x -> a)f(x) = L$, so
 
 #set align(left)
 
-While (6) and (7) may look confusing, they once again stem from the definition of the limit. For #v(-2pt)instance, since $lim_(x -> a)g(x) = M$, a $delta_2 > 0$ exists for every $epsilon > 0$. Since $display(1/2 dot 1/(abs(M) + 1) < epsilon)$, this means $display(1/2 epsilon(1/(abs(M) + 1)) < epsilon)$, so the inequalities are indeed valid.
+While (6) and (7) may look confusing, they once again stem from the definition of the limit. For #v(-2pt)instance, since $lim_(x -> a)g(x) = M$, a $delta_2 > 0$ exists for every $epsilon > 0$. Since $display(1/2 dot 1/(abs(M) + 1) < 1)$, this means $display(1/2 epsilon(1/(abs(M) + 1)) < epsilon)$, so the inequalities are indeed valid.
 \ 
 #v(0pt)Resuming the proof, we let $delta = min(delta_1, delta_2, delta_3)$. Then
 

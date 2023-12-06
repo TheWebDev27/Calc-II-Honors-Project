@@ -18,7 +18,7 @@ We now employ nonstandard analysis to prove the incredible fundamental theorem o
   [
     #set align(left)
 
-    Consider a small change in input $delta x$ for some function $f(x)$ that is continuous some interval. The corresponding small change in the output can be expressed like so:
+    Consider a small change in input $delta x$ for some function $f(x)$ that is continuous on some interval. The corresponding small change in the output can be expressed like so:
 
     #set align(center)
 
@@ -272,7 +272,7 @@ $display(integral_a^b f(x)d x approx sum_(x=a \ #text[step ] delta x)^(b-delta x
 
 #set align(left)
 
-Lastly, since $F(x)$ is continuous, $F(b') approx F(b)$ (remember that $b'$ is off from $b$ by merely an infinitesimal amount), so we reach the conclusion that
+Lastly, since $F(x)$ is continuous, $F(b') approx F(b)$ (remember that $b'$ is off from $b$ by merely an infinitesimal amount), we reach the conclusion that
 
 #set align(center)
 

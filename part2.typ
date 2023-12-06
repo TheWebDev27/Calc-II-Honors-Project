@@ -70,7 +70,7 @@ $
 
 #set align(left)
 
-(2) gives us the slope in terms of a fixed point's $x$-coordinate and its horizontal distance $Delta x$ from some variable point. If we want to find the slope of a line that lies *tangent* to the curve -- meaning that it intersects the curve at exactly one point -- at $(x_0, x_0^2)$, then we can treat $Delta x$ as a very small number so that the tangent line's slope is very close to (2). We #emph[cannot] set $Delta x$ equal to zero, because (2) follows from a quotient where $Delta x$ is present in the denominator of a quotient. Anyhow, treating it as a minisule value leads to the intuitive result that the slope of some line tangent to the point $(x_0, x_0^2)$ on the parabola is essentially
+(2) gives us the slope in terms of a fixed point's $x$-coordinate and its horizontal distance $Delta x$ from some variable point. If we want to find the slope of a line that lies *tangent* to the curve -- meaning that it intersects the curve at exactly one point -- at $(x_0, x_0^2)$, then we can treat $Delta x$ as a very small number so that the tangent line's slope is very close to (2). We #emph[cannot] set $Delta x$ equal to zero, because (2) follows from a quotient where $Delta x$ is present in the denominator of a quotient. Anyhow, treating it as a miniscule value leads to the intuitive result that the slope of some line tangent to the point $(x_0, x_0^2)$ on the parabola is essentially
 
 #set align(center)
 
@@ -184,7 +184,7 @@ $display(
 
 Those who have experience with calculating the derivatives of functions using the limit definition of the derivative will be quick to notice that these calculations play out mostly the same way with the exception of the absence of the limit. 
 
-At this stage, the skeptical reader may question how exactly this system has solved the concern regarding rigor. In particular, how do the ideas presented so far formalize the concept of deeming a quantity in a given calculation as neglible? What has happened so far is that we have #emph[defined] what it means for a number to be considered negligibly small, so if a given quantity does not meet the criteria specified, then we know that it cannot be ignored. Beyond that, however, we have done nothing more than explore some basic ideas of nonstandard analysis, and rigorous justifications require a working knowledge of abstract algebra. The details are obviously left out, as they lie far beyond my expertise. While the curious reader may feel discouraged or unfulfilled by this, keep in mind that the formalization of many concepts require complicated machinery, so it is commonplace for students of mathematics to take a result at face value initially and uncover its logical justification far later. As a direct analogue to the current situation, consider the analysis behind limits covered in the first half of this paper. It is likely that most undergraduates who have studied limits will never encounter this rigorous treatment of them in their lifetime -- let alone give it any consideration. Ambitious students, however, will inevitably run across it in a real analysis course, and the formalities are unveiled then. We now lie in the very same boat with infinitesimals!
+At this stage, the skeptical reader may question how exactly this system has solved the concern regarding rigor. In particular, how do the ideas presented so far formalize the concept of deeming a quantity in a given calculation as neglible? What has happened so far is that we have #emph[defined] what it means for a number to be considered negligibly small, so if a given quantity does not meet the criteria specified, then we know that it cannot be ignored. Beyond that, however, we have done nothing more than explore some basic ideas of nonstandard analysis, and rigorous justifications require a working knowledge of abstract algebra. The details are obviously left out, as they lie far beyond my expertise. While the curious reader may feel left unfulfilled by this, keep in mind that the formalization of many concepts require complicated machinery, so it is commonplace for students of mathematics to take a result at face value initially and uncover its logical justification far later. As a direct analogue to the current situation, consider the analysis behind limits covered in the first half of this paper. It is likely that most undergraduates who have studied limits will never encounter this rigorous treatment of them in their lifetime -- let alone give it any consideration. Ambitious students, however, will inevitably run across it in a real analysis course, and the formalities are unveiled then. We now lie in the very same boat with infinitesimals!
 
 #pagebreak()
 
@@ -201,7 +201,7 @@ Stroyan, Keith. (2012). _A Brief Introduction to Infinitesimal Calculus_, can be
 
 #set align(left)
 
-It is due time for us to see how infinitesimal logic can be used to provide basic intuitive proofs of a few ideas seen in calculus.
+It is due time for us to see how infinitesimal logic can be used to provide basic intuitive argumentation for a couple ideas seen in calculus.
 
 #set text(font: "Source Serif")
 #set align(center)
@@ -267,7 +267,7 @@ where $b-a$ is the length of the interval, $H$ is the number of parts the interv
 
 #set align(left)
 
-#v(2pt)We know that any input $x$ within the interval $[a, b]$ lies within a distance of $display((b-a)/(2H))$ from one of the
+#v(2pt)We know that any input $x$ in the interval $[a, b]$ lies within a distance of $display((b-a)/(2H))$ from one of the
 #v(-2pt) partition points. To see why, consider the closed interval [2,12] divided into 5 equal subintervals ($H = 5$) so that the partition points are
 
 #set align(center)
@@ -304,7 +304,7 @@ $display((b-a)/(2H) = 1).$
 If we think of the quantity $display((b-a)/(2H))$ as half of the distance between consecutive partition points and 
 #v(-2pt) imagine a one-dimensional radius of $display((b-a)/(2H))$ around each partition, then we can see that these radii 
 #v(0pt)cover all of the values between the partition points. Therefore, any value of $x$ within the interval must 
-#v(0pt) lie within a distance of $display((b-a)/(2H))$ from one of the partition points. \ \
+#v(0pt) lie within a distance of $display((b-a)/(2H))$ from one of the partition points. \
 
 If we now let $H$ grow exceedingly large to the point where $display(1/H)$ becomes infinitesimal, then the set of 
 #v(-2pt) partition points will eventually "fill up" the rest of the interval $[a,b]$ so that any value of $x$ within the interval lies infinitely close to one of the partition points. In others words,
