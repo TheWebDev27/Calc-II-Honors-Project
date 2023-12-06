@@ -201,7 +201,7 @@ Stroyan, Keith. (2012). _A Brief Introduction to Infinitesimal Calculus_, can be
 
 #set align(left)
 
-It is due time for us to see how infinitesimal logic can be used to provide basic intuitive argumentation for a couple ideas seen in calculus.
+It is due time for us to see how infinitesimal logic can be used to provide basic intuitive argumentation for a couple of ideas seen in calculus.
 
 #set text(font: "Source Serif")
 #set align(center)
@@ -237,7 +237,7 @@ It is due time for us to see how infinitesimal logic can be used to provide basi
 
 #set text(10pt)
 
-The extreme value theorem asserts that if a function smoothly travels over an interval of inputs, then it must take on a maximum and a minimum value at some inputs $x_(max)$ and $x_(min)$.
+The extreme value theorem asserts that if a function smoothly travels over an interval of inputs, then it must take on a minimum and a maximum value at some inputs $x_(min)$ and $x_(max)$.
 
 *Continuity* entails that the outputs of a function are close to one another if the inputs are close. In other words, a small change in the input should only ever produce a proportionately small change in the output. Mathematically speaking, a function $f(x)$ is continuous on a closed interval $[a,b]$ only when
 
@@ -257,8 +257,8 @@ $display(a < a + (b-a)/H < a + (2(b-a))/H < dots.h.c < a + (k(b-a))/H < dots.h.c
 
 #set align(left)
 
-where $b-a$ is the length of the interval, $H$ is the number of parts the interval is partitioned into, and $k$ is a positive integer. Amongst the partition points, $f(x)$ achieves some maximum value at one (or 
- #v(-2pt) possibly more than one) of the partition points $x_M=display(a + (k(b-a))/H)$, so
+where $b-a$ is the length of the interval, $H$ is the number of parts the interval is partitioned into, and $k$ is a positive integer between 1 and $H$. Amongst the partition points, $f(x)$ achieves some maximum 
+ #v(-2pt) value at one (or possibly more than one) of the partition points $x_M=display(a + (k(b-a))/H)$, so
 
 #set align(center)
 
@@ -306,7 +306,7 @@ If we think of the quantity $display((b-a)/(2H))$ as half of the distance betwee
 #v(0pt)cover all of the values between the partition points. Therefore, any value of $x$ within the interval must 
 #v(0pt) lie within a distance of $display((b-a)/(2H))$ from one of the partition points. \
 
-If we now let $H$ grow exceedingly large to the point where $display(1/H)$ becomes infinitesimal, then the set of 
+If we now let $H$ grow exceedingly large to the point where $display((b-a)/(2H))$ becomes infinitesimal, then the set of 
 #v(-2pt) partition points will eventually "fill up" the rest of the interval $[a,b]$ so that any value of $x$ within the interval lies infinitely close to one of the partition points. In others words,
 
 #set align(center)

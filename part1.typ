@@ -580,7 +580,7 @@ As a whole, we see how real analysis employs a delicate system of distances and 
     [
         #set align(left)
 
-        1) The goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and \ 2) They warrant a deeper level of study far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches various ideas of calculus without the concept of limits. \ \
+        1) The goal here is to merely gain a baseline understanding of the nature of the argumentation present in real analysis and \ 2) They warrant a deeper level of study far beyond the scope of my efforts. We will, however, get to see how the next field of analysis approaches calculus without the concept of limits. \ \
     ]
 )
 

@@ -91,7 +91,7 @@ $#h(82pt) f(x + delta x) - f(x) &= f'(x) dot delta x + epsilon dot delta x$, #h(
 
 #set align(left)
 
-where $epsilon$ and $delta x$ are both infinitesimal. (4) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$, and this product is significantly smaller than $delta x$ which is already infinitesimal. The result has been shown.
+where $epsilon$ and $delta x$ are both infinitesimal. (4) tells us that a nonlinear change -- the left side -- is equal to the sum of i) a linear change, $f'(x) dot delta x$, and ii) the product of the error and the change in $x$. The result has been shown.
 
 A brief review of Riemann sums is warranted as well. A *Riemann sum* is an approximation of the area under a curve via a division into small rectangles. Consider a function $f(x)$ continuous on the interval $[a,b]$. The rectangles are obtained by first partitioning the interval $[a,b]$ into $n$ subintervals, so each partition point $x_k$ is given by
 
@@ -101,7 +101,7 @@ $display(x_k = a + (k(b-a))/n)$,
 
 #set align(left)
 
-where $0 <= k <= n$, $k$ is a positive integer, and $display((b-a)/n)$ represents the length of each subinterval. The subintervals act as bases for the rectangles, and the rectangles' heights depend on $f(x)$. For the upcoming proof, we will be focused on the *left Riemann sum*, where the height of each rectangle is determined by the left endpoints of the subintervals. With this concept, the area is approximated by:
+where $k$ is an integer from 0 to $n$, and $display((b-a)/n)$ represents the length of each subinterval. The subintervals act as bases for the rectangles, and the rectangles' heights depend on $f(x)$. For the upcoming proof, we will be focused on the *left Riemann sum*, where the height of each rectangle is determined by the left endpoints of the subintervals. With this concept, the area is approximated by:
 
 #set align(center)
 
@@ -234,7 +234,7 @@ $display(abs(sum_(x=a  \ #text[step] delta x)^(b-delta x)f(x)d x - [F(b') - F(a)
 
 #set align(left)
 
-The first inequality is just a way of saying that if two quantities are equal, then it is technically true that the absolute value of the first quantity cannot be larger than that of the second. It is an important inequality in the proof, as it represents the distance between the approximated integral and the difference of the antiderivative evaluated at (almost) $b$ and $a$, so we want to show that it goes infinitely close to 0. Now why does the second inequality hold? Recall that the triangle inequality states that $abs(a+b) <= abs(a) + abs(b)$ for any numbers $a$ and $b$. In this case, the second inequality is merely an extended triangle inequality. The reader is encouraged to consider the analogy utilized back when the triangle inequality was first introduced and extend the logic to this case and convince themselves of this fact.
+The first inequality is just a way of saying that if two quantities are equal, then it is technically true that the absolute value of the first quantity cannot be larger than that of the second. It is an important inequality in the proof, as the quanitty on the left represents the distance between the approximated integral and the difference of the antiderivative evaluated at (almost) $b$ and $a$, so we want to show that it goes infinitely close to 0. Now why does the second inequality hold? Recall that the triangle inequality states that $abs(a+b) <= abs(a) + abs(b)$ for any numbers $a$ and $b$. In this case, the second inequality is merely an extended triangle inequality. The reader is encouraged to reconsider the analogy utilized back when the triangle inequality was first introduced, extend the logic to this case, and convince themselves of this fact.
 
 If $max(abs(epsilon))$ is the largest term in the summation $display(sum_(x=a \ #text[step ] delta x)^(b-delta x) abs(epsilon) dot delta x)$, then
 
@@ -264,7 +264,7 @@ $display(max(abs(epsilon)) dot (b' - a) approx 0),$
 
 #set align(left)
 
-so
+and
 
 #set align(center)
 
@@ -280,7 +280,7 @@ $display(integral_a^b f(x)d x = F(b) - F(a)).$
 
 #set align(left)
 
-A few minutiae are left out for the sake of brevity, and the proof as a whole is far from airtight, but it succeeds in giving us a solid insight as to how the FTC can be argued from the angle of nonstandard analysis.
+A few minutiae are left out for the sake of brevity, and the proof as a whole is far from airtight, but it succeeds in giving us a solid insight as to how the fundamental theorem of calculus can be argued from the angle of nonstandard analysis.
 
 #pagebreak()
 
@@ -288,6 +288,6 @@ A few minutiae are left out for the sake of brevity, and the proof as a whole is
   Reflection
 ]
 
-The advent of nonstandard analysis lead to proofs of various results that were not unable to be practically proven with real analysis (proving them with real analysis is not impossible, though it would have been exceedingly difficult). What this entails back then was that the ease of notation helped mathematicians see things that were more hidden from a real analysis perspective. It has been shown, however, that a result proven using one system can readily be proven with the other, and as of today the applications of nonstandard analysis seem to steer toward an area of mathematics that is not particularly connected with other areas; nonstandard analysis as a whole has managed to produce its own set of unique questions and problems. In general, real analysis (and more broadly standard analysis) and nonstandard analysis by no means replace each other, but rather serve as two distinct approaches toward anaysis, and a preference toward either approach ultimately comes down to what one is first exposed to on their mathematical endeavors.
+The advent of nonstandard analysis lead to proofs of various results that were not unable to be practically proven with real analysis (proving them with real analysis was not impossible, though it would have been exceedingly difficult). What this entails back then was that the ease of notation with nonstandard analysis helped mathematicians see things that were more hidden from a real analysis perspective. It has been shown, however, that a result proven using one system can readily be proven with the other, and as of today the applications of nonstandard analysis seem to steer toward an area of mathematics that is not particularly connected with other areas; nonstandard analysis as a whole has managed to produce its own set of unique questions and problems. In general, real analysis (and more broadly standard analysis) and nonstandard analysis by no means replace each other, but rather serve as two distinct approaches toward analysis, and a preference toward either approach ultimately comes down to what one is first exposed to in their mathematical endeavors.
 
 #pagebreak()
