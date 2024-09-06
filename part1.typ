@@ -243,7 +243,7 @@ We can also prove some essential limit laws: their sums, differences, products, 
             align: (right, left),
             stroke: none,
             [(i)], $lim_(x -> a)[f(x) + g(x)] = L + M$,
-            [(ii)], $lim_(x -> a)[f(x - g(x))] = L - M$,
+            [(ii)], $lim_(x -> a)[f(x) - g(x)] = L - M$,
             [(iii)], $lim_(x -> a)f(x)g(x) = L M$,
             [(iv)], $display(lim_(x -> a)f(x)/g(x) = L/M)$
         )
